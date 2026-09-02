@@ -1,0 +1,50 @@
+version: 1
+settings:
+  repeat_interval_seconds: 600
+  availability_alerts:
+    enabled: true
+    severity: "critical"
+    repeat_interval_seconds: 600
+
+metrics:
+  cpu:
+    enabled: true
+    comparator: "gt"
+    unit: "percent"
+    severity: "warning"
+    thresholds:
+      physical: 90
+      blade: 90
+      vm: 85
+      container: 85
+
+  ram:
+    enabled: true
+    comparator: "gt"
+    unit: "percent"
+    severity: "warning"
+    thresholds:
+      physical: 90
+      blade: 90
+      vm: 90
+      container: 90
+
+  disk:
+    enabled: true
+    comparator: "gt"
+    unit: "percent"
+    severity: "warning"
+    thresholds:
+      physical: 85
+      blade: 85
+      vm: 80
+      container: 80
+
+  temperature:
+    enabled: true
+    comparator: "gt"
+    unit: "celsius"
+    severity: "critical"
+    thresholds:
+      physical: 80
+      blade: 75

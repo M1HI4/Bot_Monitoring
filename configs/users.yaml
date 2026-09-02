@@ -1,0 +1,7 @@
+version: 1
+users:
+  - user_id: <user_id>
+    chat_id: <chat_id>
+    username: "your_telegram_username"
+    role: "admin"
+    enabled: true

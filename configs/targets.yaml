@@ -1,0 +1,29 @@
+version: 1
+targets:
+  - id: "blade-server-01"
+    name: "Blade Server 01"
+    type: "blade"
+    description: "Example blade server target. Replace labels with real node_exporter labels from your Prometheus."
+    prometheus:
+      job: "node-exporter"
+      instance: "192.0.2.20:9100"
+    enabled: false
+
+  - id: "vm-server-01"
+    name: "VM Server 01"
+    type: "vm"
+    description: "Example virtual machine target. Replace labels with real node_exporter labels from your Prometheus."
+    prometheus:
+      job: "node-exporter"
+      instance: "192.0.2.30:9100"
+    enabled: false
+
+  - id: "docker-container-01"
+    name: "Docker Container 01"
+    type: "container"
+    description: "Example Docker container target. Replace labels with real cAdvisor labels from your Prometheus."
+    prometheus:
+      job: "cadvisor"
+      instance: "192.0.2.40:8080"
+      name: "example-container"
+    enabled: false

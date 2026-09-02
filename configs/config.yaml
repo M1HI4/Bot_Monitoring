@@ -1,0 +1,23 @@
+telegram:
+  token: "${TELEGRAM_BOT_TOKEN}"
+
+prometheus:
+  base_url: "${PROMETHEUS_BASE_URL}"
+  timeout_seconds: 10
+
+app:
+  name: "monitoring-bot"
+  environment: "production"
+  log_level: "INFO"
+  private_only: true
+  reload_configs_each_request: true
+  background_check_interval_seconds: 30
+  default_alert_repeat_interval_seconds: 600
+  timezone: "Europe/Moscow"
+
+paths:
+  targets_file: "configs/targets.yaml"
+  users_file: "configs/users.yaml"
+  alerts_file: "configs/alerts.yaml"
+  subscriptions_file: "configs/subscriptions.yaml"
+  alert_state_file: "runtime/alert_state.yaml"

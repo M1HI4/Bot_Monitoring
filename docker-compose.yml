@@ -1,0 +1,12 @@
+services:
+  monitoring-bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: monitoring-bot
+    restart: unless-stopped
+    env_file:
+      - ./.env
+    volumes:
+      - ./configs:/app/configs
+      - ./runtime:/app/runtime
